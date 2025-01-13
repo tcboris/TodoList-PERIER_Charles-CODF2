@@ -1,4 +1,4 @@
-# todo_list.py
+import os
 
 class TodoList:
     def __init__(self):
@@ -37,10 +37,16 @@ class TodoList:
         print()
 
 
+def clear_console():
+    """Clear the console screen."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def main():
     todo_list = TodoList()
 
     while True:
+        clear_console()  # Clear the screen before showing the menu
         print("Todo List Application")
         print("1. Add Task")
         print("2. Delete Task")
@@ -60,6 +66,7 @@ def main():
             todo_list.complete_task(task_number)
         elif choice == "4":
             todo_list.show_tasks()
+            input("Press Enter to return to the menu...")  # Pause before clearing
         elif choice == "5":
             print("Exiting Todo List Application. Goodbye!")
             break
