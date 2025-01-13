@@ -58,7 +58,7 @@ def main():
         if choice == "1":
             task = input("Enter the task: ")
             todo_list.add_task(task)
-        elif choice == "1":
+        elif choice == "2":
             task_number = int(input("Enter task number to delete: "))
             todo_list.delete_task(task_number)
         elif choice == "3":
